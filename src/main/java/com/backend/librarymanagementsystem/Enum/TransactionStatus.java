@@ -1,7 +1,7 @@
 package com.backend.librarymanagementsystem.Enum;
 
-public enum TransactionStatus {
+public enum TransactionStatus  {
     SUCCESS,
     FAILED,
-   PENDING
+    PENDING
 }

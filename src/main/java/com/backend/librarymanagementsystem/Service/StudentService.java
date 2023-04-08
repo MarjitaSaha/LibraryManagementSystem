@@ -3,8 +3,10 @@ package com.backend.librarymanagementsystem.Service;
 import com.backend.librarymanagementsystem.DTO.StudentRequestDto;
 import com.backend.librarymanagementsystem.DTO.StudentResponseDto;
 import com.backend.librarymanagementsystem.DTO.StudentUpdateEmailRequestDto;
+import com.backend.librarymanagementsystem.Entity.Book;
 import com.backend.librarymanagementsystem.Entity.LibraryCard;
 import com.backend.librarymanagementsystem.Entity.Student;
+import com.backend.librarymanagementsystem.Entity.Transaction;
 import com.backend.librarymanagementsystem.Enum.CardStatus;
 import com.backend.librarymanagementsystem.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +35,7 @@ public class StudentService {
 
        //set card in student
        student.setCard(libraryCard);
-       //save student and car librarywill be saved by default
+       //save student and librarycard will be saved by default
        studentRepository.save(student);
 
     }
@@ -63,5 +65,23 @@ public class StudentService {
         studentResponseDto.setEmail(updatedStudent.getEmail());
         return  studentResponseDto;
     }
+//    public void deleteStudent(int studId)
+//    {
+//        Student student=studentRepository.findById(studId).get();
+//       LibraryCard libraryCard=student.getCard();
+//       if(libraryCard!=null)
+//       {
+//           List<Transaction> transactions = libraryCard.getTransaction();
+//           for (Transaction transaction : transactions) {
+//               Book book = transaction.getBook();
+//               book.; // remove the transaction from the book's list
+//           }
+//           ; // remove all transactions from the card's list
+//       }
+//
+//        // remove the student from the list of students
+//        studentRepository.delete(student);
+//
+//    }
 
 }

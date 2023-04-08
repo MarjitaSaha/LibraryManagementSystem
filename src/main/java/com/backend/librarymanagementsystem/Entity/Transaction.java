@@ -27,6 +27,7 @@ public class Transaction {
     @CreationTimestamp
     private Date transactionDate;
     private boolean isIssuedOperation;
+    private String message;
     @ManyToOne
     @JoinColumn
     Book book;
